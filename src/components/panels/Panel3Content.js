@@ -1,6 +1,7 @@
-import React, {useState, Fragment} from 'react';
+import React, {useState, useRef, useEffect, Fragment} from 'react';
 import { Document, Page } from 'react-pdf';
 import falcon from '../../pdf/falcon.pdf';
+import { PDFViewer } from '../../pdfTron';
 
 function Panel3Content({pageNumber}) {
 	
@@ -22,8 +23,9 @@ function Panel3Content({pageNumber}) {
 
     return (
       <div>
-	    {scale === 1 ? (<button onClick={() => changeScale('zoomin')}>zoom in</button>) : (<button onClick={() => changeScale('zoomout')}>zoom out</button>)}
-        <Document
+		<PDFViewer pdfFile={falcon}/>
+	    {/* {scale === 1 ? (<button onClick={() => changeScale('zoomin')}>zoom in</button>) : (<button onClick={() => changeScale('zoomout')}>zoom out</button>)} */}
+		{/* <Document
           file={falcon}
 		  loading="please wait,loading..."
 		  error="Sorry, not able to display"
@@ -32,7 +34,7 @@ function Panel3Content({pageNumber}) {
         >
 		<Page scale={scale} pageNumber={pageNumber} />
 		  
-        </Document>
+        </Document> */}
       </div>
     );
 	
