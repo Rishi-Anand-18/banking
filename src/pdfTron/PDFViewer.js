@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect, Fragment} from 'react';
 import WebViewer from '@pdftron/webviewer';
 
-const PDFViewer = ({pdfFile}) => {
+const PDFViewer = ({pdfFile, currentPage}) => {
     const viewer = useRef(null);
 
     useEffect(() => {
@@ -12,8 +12,13 @@ const PDFViewer = ({pdfFile}) => {
 		  },
 		  viewer.current,
 		).then((instance) => {
-			const { documentViewer } = instance.Core;
 			// you can now call WebViewer APIs here...
+			const { documentViewer } = instance.Core;
+			documentViewer.addEventListener('documentLoaded', function() {
+				if(currentPage){
+					documentViewer.setCurrentPage(currentPage);
+				}
+			});
 		  });
 	  }, []);
 
