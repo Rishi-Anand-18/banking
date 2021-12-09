@@ -23,7 +23,7 @@ function Panel3Content({pageNumber}) {
 
     return (
       <div>
-		<PDFViewer pdfFile={falcon} currentPage={5}/>
+		<PDFViewer pdfFile={falcon} currentPage={pageNumber}/>
 	    {/* {scale === 1 ? (<button onClick={() => changeScale('zoomin')}>zoom in</button>) : (<button onClick={() => changeScale('zoomout')}>zoom out</button>)} */}
 		{/* <Document
           file={falcon}
