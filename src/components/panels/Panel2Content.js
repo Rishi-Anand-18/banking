@@ -65,6 +65,7 @@ function Panel2Content({size, setPanel3View, screen3Icons, setScreen3Icons, setP
 							</Document>
 						</Paper>
 						</Box>
+						<p>{index + 1}</p>
 					</Grid>
 				))}
 			</Grid>		
