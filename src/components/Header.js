@@ -60,7 +60,7 @@ function Header({setScreen0, folderView, setFolderView, panel1View, setPanel1Vie
 	const classes = useStyles();
 	return(
 		<ElevationScroll>
-			<AppBar position="fixed">
+			<AppBar position="fixed" style={{backgroundColor: '#222'}}>
 				<Toolbar>
 					<Tooltip title="Home" placement="bottom" arrow>
 						<IconButton onClick={handleHomeIconClick}>
