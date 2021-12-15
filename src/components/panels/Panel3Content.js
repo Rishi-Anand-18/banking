@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect, Fragment} from 'react';
 import { Document, Page } from 'react-pdf';
 import falcon from '../../pdf/falcon.pdf';
+import lionking from '../../pdf/lion-king.pdf';
 import { PDFViewer } from '../../pdfTron';
 
 function Panel3Content({pageNumber}) {
@@ -23,7 +24,7 @@ function Panel3Content({pageNumber}) {
 
     return (
       <div>
-		<PDFViewer pdfFile={falcon} currentPage={pageNumber}/>
+		<PDFViewer pdfFile={lionking} currentPage={pageNumber}/>
 	    {/* {scale === 1 ? (<button onClick={() => changeScale('zoomin')}>zoom in</button>) : (<button onClick={() => changeScale('zoomout')}>zoom out</button>)} */}
 		{/* <Document
           file={falcon}
