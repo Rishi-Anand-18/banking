@@ -3,8 +3,8 @@ import Panel2Content from './Panel2Content.js';
 import Panel3Content from './Panel3Content.js';
 
 
-function Panel23View({setPageNumber, pageNumber}) {
-	
+function Panel23View({setPageNumber, pageNumber, fileName}) {
+	console.log('Panel123View ===> ', fileName);
 	return(
 		<Split
 			gutterSize={5}
@@ -13,8 +13,8 @@ function Panel23View({setPageNumber, pageNumber}) {
 			cursor="col-resize"
 			className="split-flex"
 		>
-			<Panel2Content setPageNumber={setPageNumber} />
-			<Panel3Content pageNumber={pageNumber} />
+			<Panel2Content setPageNumber={setPageNumber} fileName={fileName}/>
+			<Panel3Content pageNumber={pageNumber} fileName={fileName}/>
 		</Split>
 	);
 	

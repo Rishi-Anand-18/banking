@@ -3,7 +3,7 @@ import Panel1Content from './Panel1Content.js';
 import Panel3Content from './Panel3Content.js';
 
 
-function Panel13View({pageNumber}) {
+function Panel13View({pageNumber, fileName, setFileName}) {
 	
 	return(
 		<Split
@@ -13,8 +13,8 @@ function Panel13View({pageNumber}) {
 			cursor="col-resize"
 			className="split-flex"
 		>
-			<Panel1Content />
-			<Panel3Content pageNumber={pageNumber} />
+			<Panel1Content setFileName={setFileName}/>
+			<Panel3Content pageNumber={pageNumber} fileName={fileName} />
 		</Split>
 	);
 	

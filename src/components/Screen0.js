@@ -71,7 +71,7 @@ function Screen0({setScreen0, query, setQuery}) {
 				} else {
 					setScreen0(false);
 				}
-			}, 5000);
+			}, 0);
 		} else {
 			showToastify("Please enter search query", "error");
 		}

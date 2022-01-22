@@ -12,24 +12,23 @@ import Panel123View from './panels/Panel123View.js';
 
 import { useState } from 'react';
 
-function Panel({panel1View, panel2View, setPanel2View, panel3View, setPanel3View, screen2Icons, setScreen2Icons, screen3Icons, setScreen3Icons}) {
+function Panel({panel1View, panel2View, setPanel2View, panel3View, setPanel3View, screen2Icons, setScreen2Icons, screen3Icons, setScreen3Icons, fileName, setFileName}) {
 	
 	const [pageNumber, setPageNumber] = useState(0);
-	
 	if(panel1View && !panel2View && !panel3View) {
-		return(<Panel1View setPanel2View={setPanel2View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons}   />);
+		return(<Panel1View setPanel2View={setPanel2View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} setFileName={setFileName}  />);
 	} else if(!panel1View && panel2View && !panel3View) {
-		return(<Panel2View setPageNumber={setPageNumber} />)
+		return(<Panel2View setPageNumber={setPageNumber} fileName={fileName} setFileName={setFileName} />)
 	} else if(!panel1View && !panel2View && panel3View) {
-		return(<Panel3View pageNumber={pageNumber} />)
+		return(<Panel3View pageNumber={pageNumber} fileName={fileName} setFileName={setFileName} />)
 	} else if(panel1View && panel2View && !panel3View) {
-		return(<Panel12View setPanel3View={setPanel3View} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} setPageNumber={setPageNumber} />);
+		return(<Panel12View setPanel3View={setPanel3View} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} setPageNumber={setPageNumber} fileName={fileName} setFileName={setFileName}/>);
 	} else if(panel1View && !panel2View && panel3View) {
-		return(<Panel13View pageNumber={pageNumber} />);
+		return(<Panel13View pageNumber={pageNumber} fileName={fileName} setFileName={setFileName} />);
 	} else if(!panel1View && panel2View && panel3View) {
-		return(<Panel23View setPageNumber={setPageNumber} pageNumber={pageNumber} />);
+		return(<Panel23View setPageNumber={setPageNumber} pageNumber={pageNumber} fileName={fileName} setFileName={setFileName} />);
 	} else if(panel1View && panel2View && panel3View) {
-		return(<Panel123View setPageNumber={setPageNumber} pageNumber={pageNumber} />);
+		return(<Panel123View setPageNumber={setPageNumber} pageNumber={pageNumber} fileName={fileName} setFileName={setFileName} />);
 	} else if(!panel1View && !panel2View && !panel3View) {
 		return(null);
 	}

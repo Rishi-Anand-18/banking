@@ -2,7 +2,7 @@ import Split from 'react-split';
 import Panel1Content from './Panel1Content.js';
 
 
-function Panel1View({setPanel2View, screen2Icons, setScreen2Icons, screen3Icons, setScreen3Icons}) {
+function Panel1View({setPanel2View, screen2Icons, setScreen2Icons, screen3Icons, setScreen3Icons, setFileName}) {
 	
 	return(
 		<Split
@@ -12,7 +12,7 @@ function Panel1View({setPanel2View, screen2Icons, setScreen2Icons, screen3Icons,
 			cursor="col-resize"
 			className="split-flex"
 		>
-			<Panel1Content setPanel2View={setPanel2View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} />
+			<Panel1Content setPanel2View={setPanel2View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} setFileName={setFileName} />
 		</Split>
 	);
 	

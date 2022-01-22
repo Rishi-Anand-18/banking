@@ -2,7 +2,7 @@ import Split from 'react-split';
 import Panel3Content from './Panel3Content.js';
 
 
-function Panel3View({pageNumber}) {
+function Panel3View({pageNumber, fileName}) {
 	
 	return(
 		<Split
@@ -12,7 +12,7 @@ function Panel3View({pageNumber}) {
 			cursor="col-resize"
 			className="split-flex"
 		>
-			<Panel3Content pageNumber={pageNumber} />
+			<Panel3Content pageNumber={pageNumber} fileName={fileName}/>
 		</Split>
 	);
 	

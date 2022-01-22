@@ -4,11 +4,13 @@ import falcon from '../../pdf/falcon.pdf';
 import lionking from '../../pdf/lion-king.pdf';
 import { PDFViewer } from '../../pdfTron';
 
-function Panel3Content({pageNumber}) {
+function Panel3Content({pageNumber, fileName}) {
 	
 	const [numPages, setNumPages] = useState(null);
     //const [pageNumber, setPageNumber] = useState(1);
 	const [scale, setScale] = useState(1);
+
+	let file = fileName === 'falcon.pdf' ? falcon : lionking;
 
     function onDocumentLoadSuccess({ numPages }) {
       setNumPages(numPages);
@@ -24,7 +26,7 @@ function Panel3Content({pageNumber}) {
 
     return (
       <div>
-		<PDFViewer pdfFile={lionking} currentPage={pageNumber}/>
+		<PDFViewer pdfFile={file} currentPage={pageNumber}/>
 	    {/* {scale === 1 ? (<button onClick={() => changeScale('zoomin')}>zoom in</button>) : (<button onClick={() => changeScale('zoomout')}>zoom out</button>)} */}
 		{/* <Document
           file={falcon}

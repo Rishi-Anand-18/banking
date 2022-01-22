@@ -14,6 +14,7 @@ function Screen123({setScreen0, screen2Icons, setScreen2Icons, screen3Icons, set
 	const [panel1View, setPanel1View] = useState(true);
 	const [panel2View, setPanel2View] = useState(false);
 	const [panel3View, setPanel3View] = useState(false);
+	const [fileName, setFileName] = useState('');
 	const [searchCheckbox, setSearchCheckbox] = useState(false);
 	
 	//const [screen2Icons, setScreen2Icons] = useState(false);
@@ -52,12 +53,12 @@ function Screen123({setScreen0, screen2Icons, setScreen2Icons, screen3Icons, set
 						<Folder />
 					</Grid>
 					<Grid item xs={10}>
-						<Panel panel1View={panel1View} panel2View={panel2View} setPanel2View={setPanel2View} panel3View={panel3View} setPanel3View={setPanel3View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} />
+						<Panel panel1View={panel1View} panel2View={panel2View} setPanel2View={setPanel2View} panel3View={panel3View} setPanel3View={setPanel3View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} fileName={fileName} setFileName={setFileName}/>
 					</Grid>
 					</>
 				) : (
 					<Grid item xs={12}>
-						<Panel panel1View={panel1View} panel2View={panel2View} setPanel2View={setPanel2View} panel3View={panel3View} setPanel3View={setPanel3View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons} />
+						<Panel panel1View={panel1View} panel2View={panel2View} setPanel2View={setPanel2View} panel3View={panel3View} setPanel3View={setPanel3View} screen2Icons={screen2Icons} setScreen2Icons={setScreen2Icons} screen3Icons={screen3Icons} setScreen3Icons={setScreen3Icons}  fileName={fileName} setFileName={setFileName}/>
 					</Grid>
 				)}
 			</Grid>

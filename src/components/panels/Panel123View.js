@@ -5,7 +5,7 @@ import Panel2Content from './Panel2Content.js';
 import Panel3Content from './Panel3Content.js';
 
 
-function Panel23View({setPageNumber, pageNumber}) {//33.3333
+function Panel23View({setPageNumber, pageNumber, fileName, setFileName}) {//33.3333
 	
 	/*const [panel1Size, setPanel1Size] = useState(6);
 	const [panel2Size, setPanel2Size] = useState(6);
@@ -39,9 +39,9 @@ function Panel23View({setPageNumber, pageNumber}) {//33.3333
 			className="split-flex"
 			onDragEnd={(sizes)=> resetPanelSize(sizes)}
 		>
-			<Panel1Content />
-			<Panel2Content setPageNumber={setPageNumber} />
-			<Panel3Content pageNumber={pageNumber} />
+			<Panel1Content setFileName={setFileName}/>
+			<Panel2Content setPageNumber={setPageNumber} fileName={fileName}/>
+			<Panel3Content pageNumber={pageNumber} fileName={fileName}/>
 		</Split>
 	);
 	

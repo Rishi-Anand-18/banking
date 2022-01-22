@@ -12,7 +12,7 @@ import lionking from '../../pdf/lion-king.pdf';
 import Paper from '@mui/material/Paper';
 import { Document, Page } from 'react-pdf';
 
-function Panel1Content({size, setPanel2View, screen2Icons, setScreen2Icons, screen3Icons, setScreen3Icons}) {
+function Panel1Content({size, setPanel2View, screen2Icons, setScreen2Icons, screen3Icons, setScreen3Icons, setFileName}) {
 	
 	const imageData = [
 		{ key: falcon, name: 'falcon.pdf', size: 6 },
@@ -22,6 +22,7 @@ function Panel1Content({size, setPanel2View, screen2Icons, setScreen2Icons, scre
 	
 	const handleThumbnailClick = (fileName) => {
 		console.log(fileName);
+		setFileName(fileName)
 		if(screen2Icons === false) {
 			setPanel2View(true);
 			setScreen2Icons(true);

@@ -3,7 +3,7 @@ import WebViewer from '@pdftron/webviewer';
 
 const PDFViewer = ({pdfFile, currentPage}) => {
     const viewer = useRef(null);
-	const [docViewer, setDocViewer] = useState(null);
+	const [pdfTronInstance, setPDFTronInstance] = useState(null);
 
     useEffect(() => {
 		WebViewer(
@@ -16,7 +16,7 @@ const PDFViewer = ({pdfFile, currentPage}) => {
 			// you can now call WebViewer APIs here...
 			const { documentViewer } = instance.Core;
 			documentViewer.addEventListener('documentLoaded', function() {
-				setDocViewer(documentViewer);
+				setPDFTronInstance(instance);
 				if(currentPage){
 					documentViewer.setCurrentPage(currentPage);
 				}
@@ -25,9 +25,15 @@ const PDFViewer = ({pdfFile, currentPage}) => {
 	  }, []);
 	  
 	  useEffect(() => {
-		  if(currentPage && docViewer){
-					docViewer.setCurrentPage(currentPage);
-				}
+		  if(currentPage && pdfTronInstance){
+				const { documentViewer } = pdfTronInstance.Core;
+				pdfTronInstance.UI.loadDocument(pdfFile, {
+					extension: 'pdf'
+				});
+				documentViewer.addEventListener('documentLoaded', function() {
+					documentViewer.setCurrentPage(currentPage);
+				});
+			}
 	  }, [currentPage])
 
       return(
